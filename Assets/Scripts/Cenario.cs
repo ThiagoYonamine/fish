@@ -21,7 +21,7 @@ public class Cenario : MonoBehaviour {
 			offset += (CnInputManager.GetAxis ("Horizontal") / distancia);
 			materialAtual.SetTextureOffset ("_MainTex", new Vector2 (offset, 0));
 		} else {
-			offset += (CnInputManager.GetAxis ("Horizontal") / (distancia*2));
+			offset += (CnInputManager.GetAxis ("Horizontal") / (distancia*1.5f));
 			materialAtual.SetTextureOffset ("_MainTex", new Vector2 (offset, 0));
 		}
 	}

@@ -35,7 +35,7 @@ public class Move : MonoBehaviour {
 			sprite.flipX = true;
 		} 
 			
-		if (playerRB.position.x >= 2.00f && CnInputManager.GetAxis("Horizontal") >=0) {
+		if (playerRB.position.x >= 0.00f && CnInputManager.GetAxis("Horizontal") >=0) {
 			
 			movement = new Vector2(0, CnInputManager.GetAxis("Vertical")*2);
 			moverCenario = true;

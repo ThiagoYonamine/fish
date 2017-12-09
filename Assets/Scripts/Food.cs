@@ -5,26 +5,22 @@ using CnControls;
 
 public class Food : MonoBehaviour {
 
-	float posx;
-	float posy;
-	float posz;
+	private Rigidbody2D FoodRB;
+
 	void Start(){
-		posx = transform.position.x;
-		posy = transform.position.y;
-		posz = transform.position.z;
+		FoodRB = GetComponent<Rigidbody2D>();
 	}
-	
 	// Update is called once per frame
 	void Update () {
-		posx -= 0.02f;
+		if (transform.position.x < 15) {
+			
+			FoodRB.velocity = new Vector2 (CnInputManager.GetAxis("Horizontal")*-10, 0);
 
-		float vel = (CnInputManager.GetAxis ("Horizontal") / 10);
-		if (vel >= 0) {
-			posx -= vel/2;
-		} else {
-
-			posx += 0.005f;
+			if (transform.position.x <= -15) {
+				//print ("destroy");
+				Destroy (gameObject);
+			}
 		}
-		transform.position = new Vector3 (posx, posy, posz); 
+
 	}
 }
